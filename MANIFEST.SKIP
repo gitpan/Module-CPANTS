@@ -1,6 +1,6 @@
-^_build
-^Build$
-^blib
+_build
+Build$
+blib
 ~$
 \.bak$
 ^MANIFEST\.SKIP$
@@ -12,6 +12,7 @@ CVS
 ^\.#
 \.#
 #$
+\B\.svn\b
 
 \.bs$
 \.c$
