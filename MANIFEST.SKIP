@@ -18,3 +18,4 @@ CVS
 \.o$
 pm_to_blib
 unpacked
+SIGNATURE
