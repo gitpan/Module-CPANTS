@@ -1,5 +1,15 @@
 Revision history for Perl module Module::CPANTS:
 
+Sat Jun 28 10:52:39 BST 2003
+	- took CPANPLUS out of the prerequisites - it's useful, but
+	  not necessary
+	- fixed typo in POD, noticed by Simon Cozens
+	- now include packed and unpacked distribution size 
+	- now include the total number of releases of that distribution
+	- more recent testers data
+	- more recent data
+	- dedicated to Jos and Elaine
+
 0.20030525 Sun May 25 15:47:56 BST 2003
 	- more recent data
 

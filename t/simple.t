@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 use strict;
-use Test::More tests => 8;
+use Test::More tests => 10;
 
 use_ok("Module::CPANTS");
 
@@ -46,3 +46,11 @@ is_deeply($lines, {
       'total' => 265,
       'with_comments' => 8,
 });
+
+my $size = $data->{size};
+is_deeply($size, {
+      'packed' => 3883,
+      'unpacked' => 13078,
+});
+
+is($data->{releases}, 5);

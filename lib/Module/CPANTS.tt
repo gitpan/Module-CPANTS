@@ -31,7 +31,7 @@ Module::CPANTS - CPAN Module Testing
 =head1 SYNOPSIS
 
   use Module::CPANTS;
-  my $c = Module::CPANTS;
+  my $c = Module::CPANTS->new();
   my $cpants = $c->data;
 
 =head1 DESCRIPTION
@@ -70,6 +70,7 @@ The actual information currently returned is as follows:
       'total' => 265,
       'with_comments' => 8
     },
+    'releases' => '5',
     'requires' => [
       'Graphics-ColorNames-0.32.tar.gz',
       'Scalar-List-Utils-1.11.tar.gz',
@@ -84,13 +85,17 @@ The actual information currently returned is as follows:
       'File-Spec-0.82.tar.gz',
       'Graphics-ColorNames-0.32.tar.gz',
       'Scalar-List-Utils-1.11.tar.gz',
-      'Test-Harness-2.26.tar.gz',
+      'Test-Harness-2.28.tar.gz',
       'Test-Simple-0.47.tar.gz'
     ],
+    'size' => {
+      'packed' => 3883,
+      'unpacked' => 13078
+    },
     'testers' => {
       'fail' => 1,
-      'pass' => 5,
-    },
+      'pass' => 5
+    }
   }
 
 The "author" field is the PAUSE ID of the author of the distribution.
@@ -106,6 +111,9 @@ The "files" field is a listref containing interesting files which were
 found. The following files are deemed interesting at the moment: 
 Makefile.PL, README, Build.PL, META.yml, SIGNATURE, MANIFEST.
 
+The "releases" field contains the total number of releases to CPAN
+that distribution has.
+
 The "requires_module" field is a hashref containing the module
 prerequisites listed in the Makefile.PL for the distribution.
 
@@ -117,10 +125,13 @@ The "requires_recursive" is the same as "requires" but lists the
 recursive dependencies. This should be all the distributions that the
 distribution needs to run.
 
+The "size" contains two fields: the packed and unpacked size of the
+distribution in bytes.
+
 The "testers" field contains the number of passes and fails reported
 by the CPAN testers (http://testers.cpan.org/).
 
-More data is to be added soon. A metric may be added soon.
+More data is to be added soon. A kwalitee rating may be added soon.
 
 Note that CPANPLUS is very useful for relating modules to
 distributions.
