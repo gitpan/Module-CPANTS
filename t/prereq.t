@@ -2,25 +2,25 @@
 use strict;
 use Test::More tests => 4;
 
-use_ok("Module::CPANTS::Prereq");
+use_ok("Module::CPANTS");
 
-my $p = Module::CPANTS::Prereq->new();
+my $cpants = Module::CPANTS->new()->data;
 
-my $m = $p->requires_module->{'Acme-Colour-0.20.tar.gz'};
+my $m = $cpants->{'Acme-Colour-0.20.tar.gz'}->{requires_module};
 is_deeply($m, {
           'List::Util' => 0,
           'Test::Simple' => 0,
           'Graphics::ColorNames' => 0
 });
 
-my $r = $p->requires->{'Acme-Colour-0.20.tar.gz'};
+my $r = $cpants->{'Acme-Colour-0.20.tar.gz'}->{requires};
 is_deeply($r, [
           'Graphics-ColorNames-0.32.tar.gz',
           'Scalar-List-Utils-1.11.tar.gz',
           'Test-Simple-0.47.tar.gz'
 ]);
 
-my $rr = $p->requires_recursive->{'Acme-Colour-0.20.tar.gz'};
+my $rr = $cpants->{'Acme-Colour-0.20.tar.gz'}->{requires_recursive};
 is_deeply($rr, [
           'File-Spec-0.82.tar.gz',
           'Graphics-ColorNames-0.32.tar.gz',

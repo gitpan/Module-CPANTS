@@ -6,12 +6,15 @@ META.yml
 Makefile.PL
 README
 SIGNATURE
+examples/generate_moduleinfo.pl
 examples/generate_prereq.pl
+examples/graph_deps.pl
 examples/unpack.pl
 lib/Module/CPANTS.pm
+lib/Module/CPANTS/Data.pm
+lib/Module/CPANTS/Generator/Data.pm
+lib/Module/CPANTS/Generator/ModuleInfo.pm
 lib/Module/CPANTS/Generator/Prereq.pm
-lib/Module/CPANTS/Prereq.pm
-lib/Module/CPANTS/Prereq/Data.pm
 lib/Module/CPANTS/Unpack.pm
 t/prereq.t
 t/signature.t

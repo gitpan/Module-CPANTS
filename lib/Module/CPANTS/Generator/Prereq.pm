@@ -4,8 +4,9 @@ use Carp;
 use CPANPLUS;
 use Data::Dumper;
 use File::Spec::Functions;
+use Module::CPANTS::Generator::Data;
 use vars qw($requires $recursive $VERSION);
-$VERSION = "0.001";
+$VERSION = "0.002";
 
 sub new {
   my $class = shift;
@@ -29,6 +30,9 @@ sub generate {
   chdir $dir || croak("Could not chdir into $dir");
 
   my $cp = CPANPLUS::Backend->new(conf => {verbose => 0, debug => 0});
+
+  my $data = Module::CPANTS::Generator::Data->new();
+  my $cpants = $data->data;
 
   my $count = 0;
   my $total;
@@ -80,24 +84,13 @@ sub generate {
   my $requires_array = $self->fold($requires);
   my $recursive_array = $self->fold($recursive);
 
-  $Data::Dumper::Sortkeys = 1;
-  $Data::Dumper::Indent = 1;
+  foreach my $k (keys %$requires) {
+    $cpants->{$k}->{requires_module} = $requires_module->{$k};
+    $cpants->{$k}->{requires} = $requires_array->{$k};
+    $cpants->{$k}->{requires_recursive} = $recursive_array->{$k};
+  }
 
-  my $module = q|
-package Module::CPANTS::Prereq::Data;
-use strict;
-require Exporter;
-use vars qw(@ISA @EXPORT_OK $requires_module $requires $recursive);
-@ISA = qw(Exporter);
-@EXPORT_OK = qw($requires_module $requires $recursive);
-|;
-
-  $module .= "\n" .   Data::Dumper->Dump([$requires_module], [qw(requires_module)]);
-  $module .= "\n" .   Data::Dumper->Dump([$requires_array], [qw(requires)]);
-  $module .= "\n" .   Data::Dumper->Dump([$recursive_array], [qw(recursive)]);
-  $module .= "\n1;";
-
-  print $module;
+  $data->data($cpants);
 
   return $count;
 }

@@ -1,5 +1,11 @@
 Revision history for Perl module Module::CPANTS.
 
+0.002 Tue Mar 25 21:16:54 GMT 2003
+	- patches by Richard Clamp to make Makefile.PL
+	  work better and also examples/graph_deps.pl
+	- reworking of data structures, see Module::CPANTS
+	- added author and description fields
+
 0.001 Mon Mar 24 22:25:12 GMT 2003
 	- released initial version
 
