@@ -1,6 +1,6 @@
 --- #YAML:1.0
 name: Module-CPANTS
-version: 0.20030426
+version: 0.20030525
 license: perl
 distribution_type: module
 requires:
