@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 use strict;
-use Test::More tests => 10;
+use Test::More tests => 11;
 
 use_ok("Module::CPANTS");
 
@@ -29,7 +29,7 @@ is_deeply($rr, [
           'File-Spec-0.82.tar.gz',
           'Graphics-ColorNames-0.32.tar.gz',
           'Scalar-List-Utils-1.11.tar.gz',
-          'Test-Harness-2.28.tar.gz',
+          'Test-Harness-2.29.tar.gz',
           'Test-Simple-0.47.tar.gz'
 ]);
 
@@ -54,3 +54,13 @@ is_deeply($size, {
 });
 
 is($data->{releases}, 5);
+
+my $uses = $data->{uses};
+is_deeply($uses, [
+      'Graphics::ColorNames',
+      'List::Util',
+      'strict',
+      'vars'
+    ]
+);
+

@@ -7,9 +7,9 @@ SYNOPSIS
       my $cpants = $c->data;
 
 DESCRIPTION
-    This is an initial stab at providing automated testing for the modules
-    on CPAN. Alpha release and all that. It's just out there to test the
-    waters.
+    This is an initial stab at providing automated testing metrics for the
+    modules on CPAN. Alpha release and all that. It's just out there to test
+    the waters.
 
     CPANTS was initially described by Michael Schwern a long time ago in:
     http://archive.develooper.com/perl-qa@perl.org/msg00148.html It is
@@ -66,7 +66,13 @@ DESCRIPTION
         'testers' => {
           'fail' => 1,
           'pass' => 5
-        }
+        },
+        'uses' => [
+          'Graphics::ColorNames',
+          'List::Util',
+          'strict',
+          'vars'
+        ]
       }
 
     The "author" field is the PAUSE ID of the author of the distribution.
@@ -100,7 +106,9 @@ DESCRIPTION
     distribution in bytes.
 
     The "testers" field contains the number of passes and fails reported by
-    the CPAN testers (http://testers.cpan.org/).
+    the CPAN testers (http://testers.cpan.org/). The "tests" subfield
+    returns the number of tests in that distribution (this is only available
+    for a limited number of distributions at the moment).
 
     More data is to be added soon. A kwalitee rating may be added soon.
 
