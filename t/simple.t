@@ -41,8 +41,9 @@ is_deeply($testers, {
 
 my $lines = $data->{lines};
 is_deeply($lines, {
-      'nonpod' => 170,
-      'pod' => 95,
+      'nonpod' => 184,
+      'pod' => 81,
+      'pod_errors' => 0,
       'total' => 265,
       'with_comments' => 8,
 });
