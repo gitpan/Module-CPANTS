@@ -1,15 +1,10 @@
---- #YAML:1.0
-name: Module-CPANTS
-version: 0.20030725
-license: perl
-distribution_type: module
+#XXXXXXX This is a prototype!!!  It will change in the future!!! XXXXX#
+name:         Module-CPANTS
+version:      0.20030913
+version_from: lib/Module/CPANTS.pm
+installdirs:  site
 requires:
-  Test::More: 0.01
-recommends: {}
-build_requires: {}
-conflicts: {}
-provides:
-  Module::CPANTS:
-    file: lib/Module/CPANTS.pm
-    version: 0.20030725
-generated_by: Module::Build version 0.19
+    Test::More:                    0.01
+
+distribution_type: module
+generated_by: ExtUtils::MakeMaker version 6.10_03

@@ -137,9 +137,7 @@ The "size" contains two fields: the packed and unpacked size of the
 distribution in bytes.
 
 The "testers" field contains the number of passes and fails reported
-by the CPAN testers (http://testers.cpan.org/). The "tests" subfield
-returns the number of tests in that distribution (this is only
-available for a limited number of distributions at the moment).
+by the CPAN testers (http://testers.cpan.org/).
 
 More data is to be added soon. A kwalitee rating may be added soon.
 

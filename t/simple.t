@@ -20,17 +20,19 @@ is_deeply($, {
 my $r = $data->{requires};
 is_deeply($r, [
           'Graphics-ColorNames-0.32.tar.gz',
-          'Scalar-List-Utils-1.11.tar.gz',
+          'Scalar-List-Utils-1.12.tar.gz',
           'Test-Simple-0.47.tar.gz'
 ]);
 
 my $rr = $data->{requires_recursive};
 is_deeply($rr, [
-          'File-Spec-0.82.tar.gz',
+          'File-Spec-0.85.tar.gz',
           'Graphics-ColorNames-0.32.tar.gz',
-          'Scalar-List-Utils-1.11.tar.gz',
-          'Test-Harness-2.29.tar.gz',
-          'Test-Simple-0.47.tar.gz'
+          'Scalar-List-Utils-1.12.tar.gz',
+          'Test-1.24.tar.gz',
+          'Test-Harness-2.30.tar.gz',
+          'Test-Simple-0.47.tar.gz',
+          'perl-5.8.0.tar.gz'
 ]);
 
 my $testers = $data->{testers};

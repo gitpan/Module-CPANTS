@@ -1,5 +1,10 @@
 Revision history for Perl module Module::CPANTS:
 
+0.20030913 Sat Sep 13 21:28:23 CET 2003
+	- more recent data
+	- use testers.cpan.org
+	- the module is now being maintained by Thomas Klausner
+
 0.20030725 Sun Jul 27 18:34:46 BST 2003
 	- more recent data
         - bug fixes for win32 POD

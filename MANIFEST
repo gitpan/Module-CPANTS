@@ -5,10 +5,8 @@ MANIFEST.SKIP
 META.yml
 Makefile.PL
 README
-SIGNATURE
 examples/graph_deps.pl
 examples/view.pl
 lib/Module/CPANTS.pm
 lib/Module/CPANTS.tt
 t/simple.t
-t/signature.t
